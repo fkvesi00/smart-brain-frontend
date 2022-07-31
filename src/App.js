@@ -67,7 +67,7 @@ class App extends Component{
  
   onSubmit=()=>{
     this.setState({imageUrl:this.state.input});
-    fetch('https://git.heroku.com/moj-server.git/image',{
+    fetch('https://moj-server.herokuapp.com/imageurl',{
         method:'post',
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify({
@@ -78,7 +78,7 @@ class App extends Component{
     .then(response => 
       { 
         if(response){
-          fetch('https://git.heroku.com/moj-server.git/image',{
+          fetch('https://moj-server.herokuapp.com:3000/image',{
             method:'put',
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify({
