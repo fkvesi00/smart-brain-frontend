@@ -71,14 +71,14 @@ class App extends Component{
         method:'post',
         headers:{'Content-Type':'application/json'},
         body: JSON.stringify({
-        input:this.state.user.input
+        input:this.state.input
         })
       })
       .then(response => response.json())
-    .then(response => 
+      .then(response => 
       { 
         if(response){
-          fetch('https://moj-server.herokuapp.com:3000/image',{
+          fetch('https://moj-server.herokuapp.com/image',{
             method:'put',
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify({
